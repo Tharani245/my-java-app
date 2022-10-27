@@ -27,6 +27,21 @@ pipeline {
                 sh "mvn sonar:sonar"
         	}
            }
-        }
+	}
+        stage("Upload in Artifactory") {
+            steps {
+                rtUpload (
+                    serverId: 'jfrog-artifact',
+                    spec: '''{
+                        "files": [
+                            {
+                                "pattern": "*.war",
+                                "target": "demomavenrepo"
+                            }
+                        ]
+                    }''',
+		    -Dv={BUILD_NUMBER}
+                )
+            }
     }
 }
