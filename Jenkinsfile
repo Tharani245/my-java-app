@@ -11,6 +11,14 @@ pipeline {
                 sh "mvn clean install"
             }
         }
+	stage("Test and Code Coverage") {
+            steps {
+                mnv test
+                // junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
+                // junit '**/test-reports/*.xml'
+                // jacoco ()
+            }
+        }
         stage('SonarQube analysis') {
 	   steps{
                 withSonarQubeEnv('sonarqube-9.7') {
