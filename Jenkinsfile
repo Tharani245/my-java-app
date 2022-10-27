@@ -15,8 +15,8 @@ pipeline {
             steps {
                 sh "mvn test"
                 junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
-                junit '**/test-results/*.xml'
-                // jacoco ()
+                // junit '**/test-results/*.xml'
+                jacoco ()
             }
         }
         stage('SonarQube analysis') {
