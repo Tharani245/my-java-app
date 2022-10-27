@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh "mvn test"
                 // junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
-                // junit '**/test-reports/*.xml'
+                junit '**/test-reports/*.xml'
                 // jacoco ()
             }
         }
