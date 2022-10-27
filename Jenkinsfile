@@ -13,9 +13,11 @@ pipeline {
         }
 	stage("Test and Code Coverage") {
             steps {
-                sh "mvn verify"
-                junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
+                sh "mvn test"
+                // junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
                 // junit '**/test-results/*.xml'
+		sh 'ln -s C:\Users\Shanmugam K\.jenkins\workspace\Declarative_Pipeline_Project_2\target\surefire-reports\TEST-in.javahome.myweb.controller.CalculatorTest.xml $WORKSPACE'
+		junit "TEST-in.javahome.myweb.controller.CalculatorTest.xml"
                 jacoco ()
             }
         }
