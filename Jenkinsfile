@@ -40,8 +40,6 @@ pipeline {
                             }
                         ]
                     }''',
-		    // -Dv={BUILD_NUMBER}
-		    JFROG_CLI_BUILD_NUMBER: $run_number
                 )
             }
     }
