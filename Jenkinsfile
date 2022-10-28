@@ -36,7 +36,7 @@ pipeline {
                         "files": [
                             {
                                 "pattern": "*.war",
-                                "target": "demomavenrepo"
+                                "target": "java-demo-repo"
                             }
                         ]
                     }''',
