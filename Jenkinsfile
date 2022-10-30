@@ -58,7 +58,7 @@ pipeline {
 	}
 	stage('deploy') { 
             steps {
-		    sh "cp "/target/*.war" ${tomcatweb}/*.war"
+		    sh "cp "/target/"*.war "${tomcatweb}/"*.war"
             }
 	}
     }
