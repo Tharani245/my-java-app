@@ -58,7 +58,7 @@ pipeline {
 	}
 	stage('deploy') { 
             steps {
-                sh "cp "/target/"*.war ${tomcatweb}/*.war"
+                sh "cp "C:/Users/Shanmugam K/.jenkins/workspace/Declarative_Pipeline_Project_2/target/"*.war ${tomcatweb}/*.war"
             }
 	}
     }
