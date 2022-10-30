@@ -11,7 +11,7 @@ pipeline {
                 sh "mvn clean install"
             }
         }
-	stage("Test and Code Coverage") {
+	stage("Test") {
             steps {
                 sh "mvn test"
                 // junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
