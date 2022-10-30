@@ -18,10 +18,15 @@ pipeline {
                 // junit '**/test-results/*.xml'
 		// sh 'ln -s C:\Users\Shanmugam K\.jenkins\workspace\Declarative_Pipeline_Project_2\target\surefire-reports\TEST-in.javahome.myweb.controller.CalculatorTest.xml $WORKSPACE'
 		junit "/target/surefire-reports/*.xml"
-		sh "mvn jacoco:check"
-                jacoco ()
+		// sh "mvn jacoco:check"
+                // jacoco ()
             }
         }
+	stage('Code Coverage') {
+	   steps{
+                sh "mvn jacoco:report"
+           }
+	}
         stage('SonarQube analysis') {
 	   steps{
                 withSonarQubeEnv('sonarqube-9.7') {
