@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-	   tomcatWeb = 'D:\Programfiles\Tomcat\webapps'
-           tomcatBin = 'D:\Programfiles\Tomcat\bin'
+	   tomcatWeb = 'D:\\Programfiles\\Tomcat\\webapps'
+           tomcatBin = 'D:\\Programfiles\\Tomcat\\bin'
            tomcatStatus = ''
     }	
     stages {
