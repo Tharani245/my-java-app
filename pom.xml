@@ -4,8 +4,8 @@
 	<groupId>in.javahome</groupId>
 	<artifactId>myweb</artifactId>
 	<packaging>war</packaging>
-	<version>$env.BUILD_NUMBER</version>
-	<name>$env.JOB_NAME</name>
+	<version>${env.BUILD_NUMBER}</version>
+	<name>${env.JOB_NAME}</name>
 	
 	<!-- Demo on Github Webhooks-->
 
