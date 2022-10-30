@@ -58,7 +58,10 @@ pipeline {
 	}
 	stage('deploy') { 
             steps {
-		    sh "cp "/$(WORKSPACE)/target/"*.war ${tomcatweb}/*.war"
+		    sh "cp "/$(WORKSPACE)/target/"*.war ${tomcatWeb}/*.war"
+		    // sh "${tomcatBin}/shutdown.sh"
+                    // sh "scp -o StrictHostKeyChecking=no target/my-webservice.war /opt/tomcat/latest/webapps"
+                    // sh "/opt/tomcat/latest/bin/startup.sh"
             }
 	}
     }
