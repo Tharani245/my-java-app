@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    environment {
+	   tomcatWeb = 'D:\\Programfiles\\Tomcat\\webapps'
+           tomcatBin = 'D:\\Programfiles\\Tomcat\\bin'
+           tomcatStatus = ''
+    }	
     stages {
         stage("git clone") {
             steps {
@@ -51,5 +56,15 @@ pipeline {
                 )
             }
 	}
+	stage('deploy') { 
+            steps {
+                sh "copy target\\*.war \"${tomcatweb}\\*.war""
+            }
+            stage ('start tomcat server') {
+                sleep(time:5,unit:"SECONDS")
+                sh "$(tomcatBin)\\startup.bat"
+                sleep(time:100,unit:"SECONDS")
+            }
+	}    
     }
 }
