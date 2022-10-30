@@ -2,10 +2,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>in.javahome</groupId>
-	<artifactId>$env.JOB_NAME</artifactId>
+	<artifactId>myweb</artifactId>
 	<packaging>war</packaging>
 	<version>$env.BUILD_NUMBER</version>
-	<name>my-app</name>
+	<name>$env.JOB_NAME</name>
 	
 	<!-- Demo on Github Webhooks-->
 
