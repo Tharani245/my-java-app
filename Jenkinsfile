@@ -60,11 +60,11 @@ pipeline {
             steps {
                 sh "copy target\\*.war "${tomcatweb}"\\*.war"
             }
-            stage ('start tomcat server') {
-                sleep(time:5,unit:"SECONDS")
-		    sh "${tomcatBin}\\startup.bat"
-                sleep(time:100,unit:"SECONDS")
-            }
-	}    
+	}
+        stage ('start tomcat server') {
+             sleep(time:5,unit:"SECONDS")
+	     bat "${tomcatBin}\\startup.bat"
+             sleep(time:100,unit:"SECONDS")
+        }    
     }
 }
