@@ -46,7 +46,7 @@ pipeline {
                             }
                         ]
                     }''',
-			"buildNumber": "${env.BUILD_NUMBER}"
+			"buildNumber": "${env.BUILD_NUMBER}",
 			"buildName": "${env.JOB_NAME}"
                 )
             }
